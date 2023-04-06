@@ -1,13 +1,12 @@
-<!DOCTYPE html PUBLIC "" "">
 <html>
 <head>
   <meta charset="UTF-8" />
   <title>Aero</title>
-  <link rel="stylesheet" type="text/css" href="https://dpom.github.io/flexdoc/css/default.css" />
-  <link rel="stylesheet" type="text/css" href="https://dpom.github.io/flexdoc/css/highlight.css" />
-  <script type="text/javascript" src="https://dpom.github.io/flexdoc/js/highlight.min.js"></script>
-  <script type="text/javascript" src="https://dpom.github.io/flexdoc/js/jquery.min.js"></script>
-  <script type="text/javascript" src="https://dpom.github.io/flexdoc/js/page_effects.js"></script>
+  <link href="https://dpom.github.io/flexdoc/css/default.css" rel="stylesheet" type="text/css" />
+  <link href="https://dpom.github.io/flexdoc/css/highlight.css" rel="stylesheet" type="text/css" />
+  <script src="https://dpom.github.io/flexdoc/js/highlight.min.js" type="text/javascript"></script>
+  <script src="https://dpom.github.io/flexdoc/js/jquery.min.js" type="text/javascript"></script>
+  <script src="https://dpom.github.io/flexdoc/js/page_effects.js" type="text/javascript"></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>
@@ -23,7 +22,7 @@
       </a>
     </h1>
   </div>
-  <div id="sidebar1" class="sidebar primary">
+  <div class="sidebar primary" id="sidebar1">
   <h3 class="no-link">
     <span class="inner">Project</span>
   </h3>
@@ -32,7 +31,7 @@
   </ul>
   </div>
   
-<div id="sidebar2" class="sidebar secondary">
+<div class="sidebar secondary" id="sidebar2">
   <h3>
     <a href="#top">
       <span class="inner">Public Vars</span>
@@ -40,61 +39,61 @@
   </h3>
   <ul id="pubvarmenu">
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/adaptive-resolver.html">
         <span>adaptive-resolver</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/default-opts.html">
         <span>default-opts</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/deferred.html">
         <span>deferred</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/read-config.html">
         <span>read-config</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/read-config-into-tagged-literal.html">
         <span>read-config-into-tagged-literal</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/reader.html">
         <span>reader</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/relative-resolver.html">
         <span>relative-resolver</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/resolve-tagged-literals.html">
         <span>resolve-tagged-literals</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/resource-resolver.html">
         <span>resource-resolver</span>
       </a>
     </li>
     
-    <li id="pubvaritem" class="depth-1">
+    <li class="depth-1" id="pubvaritem">
       <a href="https://dpom.github.io/flexdoc/Aero/aero.core/root-resolver.html">
         <span>root-resolver</span>
       </a>
@@ -103,10 +102,10 @@
   </ul>
 </div>
 
-<div id="content" class="pubvar-doc">
+<div class="pubvar-doc" id="content">
   <h1>
     <a href="#top">
-      <span id="pubvar-name" class="inner">read-config</span>
+      <span class="inner" id="pubvar-name">read-config</span>
     </a>
   </h1>
   <h4 class="type">
@@ -131,8 +130,58 @@ the following keys:
 :resolver - a function or map used to resolve includes.</pre>
   </div>
   <h2>Examples</h2>
-  <div class="examples">
-  </div>
+  <div><pre><code class="language-clojure">(ns bzg.db
+  (:require [datalevin.core :as d]
+            [bzg.config :as config]
+            [aero.core :refer (read-config)]))
+
+;; Set up configuration
+...
+
+;; Set up configuration
+(def config (merge config/defaults (read-config "config.edn")))
+
+;; Set up the database</code></pre><a href="https://github.com/bzg/woof/blob/d0cb841d62391122ab232fd4c241c138726120c9/src/bzg/db.clj">bzg/woof</a></div><div><pre><code class="language-clojure">(ns {{app-name}}.jobs.basic-test
+    (:require [aero.core :refer [read-config]]
+              [clojure.core.async :refer [>!! close!]]
+              [clojure.java.io :as io]
+...
+(deftest basic-test
+  (testing "That we can have a basic in-out workflow run through Onyx"
+    (let [{:keys [env-config
+                  peer-config]} (read-config (io/resource "config.edn"))
+          job ({{app-name}}.jobs.basic/basic-job {:onyx/batch-size 10
+                                                  :onyx/batch-timeout 1000})</code></pre><a href="https://github.com/onyx-platform/onyx-template/blob/950f4d92b70d1b313fac1b148048230ea551b13e/src/leiningen/new/onyx_app/test/onyx_app/jobs/basic_test.clj">onyx-platform/onyx-template</a></div><div><pre><code class="language-clojure">(ns app.config
+  (:require [aero.core :refer (read-config)]
+            [clojure.java.io :as io]))
+
+...
+            [clojure.java.io :as io]))
+
+(def config (read-config (io/resource "config.edn")))
+
+(def production? (= "production" (:env config)))</code></pre><a href="https://github.com/logseq/deprecated-github-backend/blob/7aa2f187f0f2d7b1e9c3f6a057bede939b4790b7/src/main/app/config.clj">logseq/deprecated-github-backend</a></div><div><pre><code class="language-clojure">(ns twit.jobs.smoke-test
+  (:require [aero.core :refer [read-config]]
+            [clojure.core.async :refer [>!!]]
+            [clojure.java.io :as io]
+...
+(deftest smoke-test
+  (testing "Test"
+    (let [{:keys [env-config
+                  peer-config]} (read-config (io/resource "config.edn"))
+          job (twit.jobs.smoke/smoketest-job {:onyx/batch-size 10
+                                              :onyx/batch-timeout 1000})</code></pre><a href="https://github.com/onyx-platform/onyx-twitter-sample/blob/bd206630a0ee083867f44e856544c6bd664962e8/test/twit/jobs/smoke_test.clj">onyx-platform/onyx-twitter-sample</a></div><div><pre><code class="language-clojure">(ns twit.jobs.basic-test
+  (:require [aero.core :refer [read-config]]
+            [clojure.core.async :refer [>!!]]
+            [clojure.java.io :as io]
+...
+(deftest basic-test
+  (testing "That we can have a basic in-out workflow run through Onyx"
+    (let [{:keys [env-config
+                  peer-config]} (read-config (io/resource "config.edn"))
+          job (twit.jobs.basic/basic-job {:onyx/batch-size 10
+                                          :onyx/batch-timeout 1000})</code></pre><a href="https://github.com/onyx-platform/onyx-twitter-sample/blob/bd206630a0ee083867f44e856544c6bd664962e8/test/twit/jobs/basic_test.clj">onyx-platform/onyx-twitter-sample</a></div>
 </div>
 
 </body>
+</html>
