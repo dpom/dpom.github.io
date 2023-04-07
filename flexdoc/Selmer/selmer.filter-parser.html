@@ -1,0 +1,174 @@
+Base template.
+
+	
+<div id="sidebar2" class="sidebar secondary">
+  <h3>
+    <a href="#top">
+      <span class="inner">Public Vars</span>
+    </a>
+  </h3>
+  <ul id="pubvarmenu">
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/compile-filter-body.html">
+        <span>compile-filter-body</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/escape-html.html">
+        <span>escape-html</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/escape-html*.html">
+        <span>escape-html*</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/filter-str-&gt;fn.html">
+        <span>filter-str-&gt;fn</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/fix-filter-args.html">
+        <span>fix-filter-args</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/get-accessor.html">
+        <span>get-accessor</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/literal?.html">
+        <span>literal?</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/lookup-args.html">
+        <span>lookup-args</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/parse-literal.html">
+        <span>parse-literal</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/safe-filter.html">
+        <span>safe-filter</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/split-value.html">
+        <span>split-value</span>
+      </a>
+    </li>
+    
+    <li id="pubvaritem" class="depth-1">
+      <a href="https://dpom.github.io/flexdoc/Selmer/selmer.filter-parser/strip-doublequotes.html">
+        <span>strip-doublequotes</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+<div id="content" class="namespaces-docs">
+  <table id="pubvar-list">
+    <tr>
+      <th>Public Var</th>
+      <th>Description</th>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">compile-filter-body</td>
+      <td class="pubvar-doc">Turns a string like foo|filter1:x|filter2:y into a fn that expects a
+context-map and will apply the filters one after the other to the value
+from the map. It will escape the end result unless the last
+filter is &quot;safe&quot; or when it&#39;s called with escape? equal to true,
+which is the default behavior.</td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">escape-html</td>
+      <td class="pubvar-doc">Must have the form [:safe safe-string] to prevent escaping. Alternatively,
+you can call selmer.util/turn-off-escaping! to turn it off completely.
+
+If it is marked as :safe, the value will be returned as-is, otherwise it
+will be converted to a string even if it is not escaped.</td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">escape-html*</td>
+      <td class="pubvar-doc">HTML-escapes the given string. Escapes the same characters as django&#39;s escape.
+</td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">filter-str-&gt;fn</td>
+      <td class="pubvar-doc">Turns a filter string like &quot;pluralize:y:ies&quot; into a function that
+expects a value obtained from a context map or from a previously
+applied filter.</td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">fix-filter-args</td>
+      <td class="pubvar-doc">Map any sort of needed fixes to the arguments before passing them
+to the filters. Only strips enclosing doublequotes for now.</td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">get-accessor</td>
+      <td class="pubvar-doc">Returns the value of `k` from map `m`, either as a keyword or string lookup.
+</td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">literal?</td>
+      <td class="pubvar-doc"></td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">lookup-args</td>
+      <td class="pubvar-doc">Given a context map, return a function that accepts a filter
+argument and if it begins with @, return the value from the
+context map instead of treating it as a literal.</td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">parse-literal</td>
+      <td class="pubvar-doc"></td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">safe-filter</td>
+      <td class="pubvar-doc"></td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">split-value</td>
+      <td class="pubvar-doc"></td>
+    </tr>
+    
+    <tr class="pubvar-item">
+      <td class="pubvar-name">strip-doublequotes</td>
+      <td class="pubvar-doc">Removes doublequotes from the start and end of a string if any.
+</td>
+    </tr>
+    
+  </table>
+
+</div>
+
+
